@@ -11,7 +11,6 @@ function App() {
     const [tasks, setTasks] = useState([]);
     const taskBase = useSelector((state) => state.task.tasks)
     const dispatch = useDispatch();
-
     useEffect(() => {
         //this function is for loading and therefore setting the prev state to the current state after browser refreshes.
         const load = StateLoading()
@@ -67,7 +66,8 @@ function App() {
                     );
                 })}
             </div>
-        </div>
+            <Footer />
+        </div >
     );
 }
 
