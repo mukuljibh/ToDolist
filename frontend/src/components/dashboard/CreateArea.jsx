@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Zoom from "@material-ui/core/Zoom";
-import { useSnackbar } from 'notistack';
 
 function CreateArea(props) {
     const [isExpanded, setExpanded] = useState(false);
-    const { enqueueSnackbar } = useSnackbar();
     const [task, setTask] = useState({
         title: "",
         content: "",
@@ -31,7 +29,6 @@ function CreateArea(props) {
             content: "",
             isComplete: false
         });
-        Message('Added', 'success')
         event.preventDefault();
 
     }
@@ -39,9 +36,7 @@ function CreateArea(props) {
     function expand() {
         setExpanded(true);
     }
-    function Message(msg, variant) {
-        enqueueSnackbar(msg, { variant });
-    }
+
     return (
         <div>
             <form className="create-task">
